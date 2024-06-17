@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sleep infinity
+    volumes:
+      - type: bind
+        source: /tmp/.X11-unix/
+        target: /tmp/.X11-unix
+      - type: bind 
+        source: "/tmp/wayland-0"
+        target: /tmp/wayland-0  
+    env_file:
+      - .env
