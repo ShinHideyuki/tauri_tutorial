@@ -8,8 +8,10 @@ services:
       - type: bind
         source: /tmp/.X11-unix/
         target: /tmp/.X11-unix
-      - type: bind 
-        source: "/tmp/wayland-0"
-        target: /tmp/wayland-0  
+      - type: bind
+        source: ./app
+        target: /app
     env_file:
       - .env
+    ports:
+      - 3000:3000
